@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+     <title>Sandwiches!</title>
+     <link rel="stylesheet" type="text/css" href="/css/style.css">
+  </head>
+  <body>
+    <% include ../partials/header %>
+    <% include ../partials/nav %>
+    <div class="home">
+      <h1>🎉  Some of our runner-up favorites! 🎉</h1>
+      <% Object.keys(sandwiches).forEach(function (id) { %>
+        <article>
+          <h2><%= sandwiches[id].title %></h2>
+          <p><%= sandwiches[id].content %></p>
+        </article>
+      <% }) %>
+    </div>
+    <% include ../partials/footer %>
+  </body>
+</html>
