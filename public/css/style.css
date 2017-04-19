@@ -9,6 +9,41 @@ footer {
   margin-right: 0;
 }
 
+nav {
+  text-align: center;
+  font-size: 28px;
+  color: white;
+  background-color: darkgrey;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.top-nav {
+  color: white;
+  text-decoration: none;
+  padding: 10px;
+}
+
+.top-nav:hover {
+  color: white;
+  text-decoration: underline;
+}
+
+.top-nav:active {
+  color: white;
+  text-decoration: none;
+}
+
+.top-nav:visited {
+  color: white;
+  text-decoration: none;
+}
+
+.top-nav:focus {
+  color: white;
+  text-decoration: none;
+}
+
 .copyright {
   color: white;
   font-size: 22px;
@@ -34,33 +69,37 @@ header {
   color: black;
 }
 
-.navbar a:visited {
+.link {
   color: black;
 }
 
+link:visited {
+  color: black;
+  text-decoration: none;
+}
+
+link:active {
+  color: black;
+  text-decoration: none;
+}
+
+link:hover {
+  color: black;
+  text-decoration: underline;
+}
+
+link:focus {
+  color: black;
+  text-decoration: underline;
+}
+
 .winner {
-  color: purple;
-  width: 600px;
-  display: block;
-  margin: auto;
-}
-
-.hot {
-  color: red;
-  width: 600px;
-  display: block;
-  margin: auto;
-}
-
-.cold {
-  color: blue;
   width: 600px;
   display: block;
   margin: auto;
 }
 
 .home {
-  color: green;
   width: 600px;
   display: block;
   margin: auto;

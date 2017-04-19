@@ -14,7 +14,7 @@ createNavbar({
   template: 'pages/index'
 })
 createNavbar({
-  title: 'Cold',
+  title: 'Best Cold Sandwich',
   link: '/cold',
   template: 'pages/winner',
   name: 'Subway Italian Hero',
@@ -24,7 +24,7 @@ createNavbar({
   ingredients: 'Spicy Capicola, Mortadella, Genoa Salami, Provolone, Mediterranean oregano, Italian Bread, Oil, and Red wine vinegar'
 })
 createNavbar({
-  title: 'Hot',
+  title: 'Best Hot Sandwich',
   link: '/hot',
   template: 'pages/winner',
   name: 'Philly Cheesesteak',
@@ -34,7 +34,7 @@ createNavbar({
   ingredients: 'Provolone, Boneless beef short ribs, Peppers, Onions, and Sub Bun'
 })
 createNavbar({
-  title: 'Winner',
+  title: 'All Time Winner',
   link: '/winner',
   template: 'pages/winner',
   name: 'PB & J',

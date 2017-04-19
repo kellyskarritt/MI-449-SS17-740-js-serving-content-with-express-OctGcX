@@ -12,7 +12,7 @@
       <% Object.keys(navbars).forEach(function (id) { %>
         <h1><%= navbars[id].name %></h1>
         <img src=<%= navbars[id].img_url %>>
-        <a href=<%= navbars[id].url %>><%= navbars[id].text %></a>
+        <a class="link" href=<%= navbars[id].url %>><%= navbars[id].text %></a>
         <p><%= navbars[id].ingredients %></p>
       <% }) %>
     </div>
