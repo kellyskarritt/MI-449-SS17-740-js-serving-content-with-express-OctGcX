@@ -6,50 +6,57 @@ app.use(express.static('public'))
 
 app.set('view engine', 'ejs')
 
-app.get('/', function (request, response) {
-  response.render('pages/index', {
-    sandwiches: sandwiches
-  })
+var navbars = {}
+
+createNavbar({
+  title: 'Home',
+  link: '/',
+  template: 'pages/index'
+})
+createNavbar({
+  title: 'Cold',
+  link: '/cold',
+  template: 'pages/winner',
+  name: 'Subway Italian Hero',
+  text: 'Here is the nutrition facts!!',
+  url: 'http://www.subway.com/MenuNutrition/Menu/Product?ProductId=5814&MenuCategoryId=1&MenuTypeId=1',
+  img_url: '/img/subway.jpg',
+  ingredients: 'Spicy Capicola, Mortadella, Genoa Salami, Provolone, Mediterranean oregano, Italian Bread, Oil, and Red wine vinegar'
+})
+createNavbar({
+  title: 'Hot',
+  link: '/hot',
+  template: 'pages/winner',
+  name: 'Philly Cheesesteak',
+  text: 'Find the best ones here!!',
+  url: 'http://steakhousephilly.com',
+  img_url: '/img/cheesesteak_image.jpg',
+  ingredients: 'Provolone, Boneless beef short ribs, Peppers, Onions, and Sub Bun'
+})
+createNavbar({
+  title: 'Winner',
+  link: '/winner',
+  template: 'pages/winner',
+  name: 'PB & J',
+  text: 'This is my favorite peanut butter!!',
+  url: 'http://www.jif.com/products/peanut-butter/peanut-butter-and-honey',
+  img_url: '/img/pbj.jpg',
+  ingredients: '2 pieces of bread, Strawberry Jelly, and Peanut Butter'
 })
 
-app.get('/cold', function (request, response) {
-  response.render('pages/cold', {
-  })
-})
-
-app.get('/hot', function (request, response) {
-  response.render('pages/hot', {
-  })
-})
-
-app.get('/winner', function (request, response) {
-  response.render('pages/winner', {
+Object.keys(navbars).forEach(function (id) {
+  app.get(navbars[id].link, function (request, response) {
+    response.render(navbars[id].template, {
+      navbars: navbars,
+      pageinfo: navbars[id]
+    })
   })
 })
 
 app.listen(port)
 
-var sandwiches = {}
-
-function createSandwich (sandwich) {
-  var id = Object.keys(sandwiches).length
-  sandwich.createdAt = new Date()
-  sandwiches[id] = sandwich
+function createNavbar (navbar) {
+  var id = Object.keys(navbars).length
+  navbar.createdAt = new Date()
+  navbars[id] = navbar
 }
-
-createSandwich({
-  title: 'Ham and Cheese',
-  content: 'Ham and cheese between 2 pieces of bread.'
-})
-createSandwich({
-  title: 'Turkey and Cheese',
-  content: 'Turkey and cheese between 2 pieces of bread.'
-})
-createSandwich({
-  title: 'Banana and Peanut Butter',
-  content: 'Banana slices and peanut butter between 2 pieces of bread.'
-})
-createSandwich({
-  title: 'BLT',
-  content: 'Bacon, lettuce, tomato and mayo on a grilled bun. '
-})

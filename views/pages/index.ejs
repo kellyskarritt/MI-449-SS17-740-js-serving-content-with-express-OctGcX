@@ -8,15 +8,7 @@
   <body>
     <% include ../partials/header %>
     <% include ../partials/nav %>
-    <div class="home">
-      <h1>🎉  Some of our runner-up favorites! 🎉</h1>
-      <% Object.keys(sandwiches).forEach(function (id) { %>
-        <article>
-          <h2><%= sandwiches[id].title %></h2>
-          <p><%= sandwiches[id].content %></p>
-        </article>
-      <% }) %>
-    </div>
+    <h1>Home</h1>
     <% include ../partials/footer %>
   </body>
 </html>

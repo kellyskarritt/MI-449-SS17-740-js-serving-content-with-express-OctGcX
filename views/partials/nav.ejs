@@ -1,6 +1,5 @@
-<nav class="navbar">
-  <a href="/">Home</a> |
-  <a href="/hot">Best Hot Sandwich</a> |
-  <a href="/cold">Best Cold Sandwich</a> |
-  <a href="/winner">All Time Winner</a>
+<nav>
+  <% Object.keys(navbars).forEach(function (id) { %>
+    <a href=<%= navbars[id].link %>><%= navbars[id].title %></a>
+  <% }) %>
 </nav>

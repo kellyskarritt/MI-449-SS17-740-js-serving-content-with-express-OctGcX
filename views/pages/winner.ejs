@@ -2,22 +2,19 @@
 <html>
   <head>
     <meta charset="utf-8">
-     <title>Winner</title>
+     <title>Sandwiches</title>
      <link rel="stylesheet" type="text/css" href="/css/style.css">
   </head>
   <body>
     <% include ../partials/header %>
     <% include ../partials/nav %>
     <div class="winner">
-      <h1>PB &amp; J</h1>
-      <img src="/img/pbj.jpg" alt="PBJ">
-      <a href="http://www.jif.com/products/peanut-butter/peanut-butter-and-honey">This is my favorite peanut butter!!</a>
-      <h3>Ingredients</h3>
-      <ul>
-        <li>2 pieces of bread</li>
-        <li>Strawberry Jelly</li>
-        <li>Peanut Butter</li>
-      </ul>
+      <% Object.keys(navbars).forEach(function (id) { %>
+        <h1><%= navbars[id].name %></h1>
+        <img src=<%= navbars[id].img_url %>>
+        <a href=<%= navbars[id].url %>><%= navbars[id].text %></a>
+        <p><%= navbars[id].ingredients %></p>
+      <% }) %>
     </div>
     <% include ../partials/footer %>
   </body>
