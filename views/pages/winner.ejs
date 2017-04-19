@@ -9,12 +9,10 @@
     <% include ../partials/header %>
     <% include ../partials/nav %>
     <div class="winner">
-      <% Object.keys(navbars).forEach(function (id) { %>
-        <h1><%= navbars[id].name %></h1>
-        <img src=<%= navbars[id].img_url %>>
-        <a class="link" href=<%= navbars[id].url %>><%= navbars[id].text %></a>
-        <p><%= navbars[id].ingredients %></p>
-      <% }) %>
+        <h1><%= pageinfo.name %></h1>
+        <img src=<%= pageinfo.img_url %>>
+        <a class="link" href=<%= pageinfo.url %>><%= pageinfo.text %></a>
+        <p><%= pageinfo.ingredients %></p>
     </div>
     <% include ../partials/footer %>
   </body>
